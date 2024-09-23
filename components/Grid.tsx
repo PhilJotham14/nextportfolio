@@ -1,10 +1,11 @@
 import { gridItems } from "@/data";
-import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
+import { BentoGrid, BentoGridItem, AbtSection } from "./ui/BentoGrid";
 
 const Grid = () => {
   return (
     <section id="about">
-      <BentoGrid className="w-full py-20">
+      <AbtSection></AbtSection>
+      <BentoGrid className="w-full py-2">
         {gridItems.map((item, i) => (
           <BentoGridItem
             id={item.id}
@@ -21,8 +22,15 @@ const Grid = () => {
           />
         ))}
       </BentoGrid>
+      {/* <AbtSection></AbtSection> */}
     </section>
   );
 };
+
+// import MergedBentoGrid from "./ui/MergedBentoGrid";
+
+// const Grid = () => {
+//   return <MergedBentoGrid />;
+// };
 
 export default Grid;

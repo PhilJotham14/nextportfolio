@@ -1,6 +1,50 @@
 import {withSentryConfig} from '@sentry/nextjs';
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    webpack(config) {
+        // Grab the existing rule that handles SVG imports
+        const fileLoaderRule = config.module.rules.find((rule) =>
+            rule.test?.test?.(".svg")
+        );
+
+        config.module.rules.push(
+            // Reapply the existing rule, but only for svg imports ending in ?url
+            {
+                ...fileLoaderRule,
+                test: /\.svg$/i,
+                resourceQuery: /url/, // *.svg?url
+            },
+            // Convert all other *.svg imports to React components
+            {
+                test: /\.svg$/i,
+                issuer: fileLoaderRule.issuer,
+                resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
+                use: {
+                    loader: "@svgr/webpack",
+                    options: {
+                        svgoConfig: {
+                            plugins: [
+                                {
+                                    name: "preset-default",
+                                    params: {
+                                        overrides: {
+                                            removeViewBox: false,
+                                        },
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                },
+            }
+        );
+
+        // Modify the file loader rule to ignore *.svg, since we have it handled now.
+        fileLoaderRule.exclude = /\.svg$/i;
+
+        return config;
+    },
+};
 
 export default withSentryConfig(nextConfig, {
 // For all available options, see:
@@ -8,8 +52,8 @@ export default withSentryConfig(nextConfig, {
 
 // Suppresses source map uploading logs during build
 silent: true,
-org: "javascript-mastery",
-project: "javascript-nextjs",
+org: "okiror-portfolio",
+    project: "portfolio",
 }, {
 // For all available options, see:
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/

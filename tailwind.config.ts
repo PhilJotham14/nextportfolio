@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 
 const svgToDataUri = require("mini-svg-data-uri");
@@ -146,6 +147,23 @@ const config = {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+        // to make Toolbox Bento Grid items move left
+        'move-left': {
+          '0%': {
+            transform: 'translateX(0%)'
+          },
+          '100%': {
+            transform: 'translateX(-50%)'
+          },
+        },
+        'move-right': {
+          '0%': {
+            transform: 'translateX(-50%)'
+          },
+          '100%': {
+            transform: 'translateX(0%)'
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -159,6 +177,8 @@ const config = {
         fifth: "moveInCircle 20s ease infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        'move-left': 'move-left 1s linear infinite',
+        'move-right': 'move-right 1s linear infinite',
       },
     },
   },

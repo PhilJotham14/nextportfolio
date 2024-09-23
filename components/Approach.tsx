@@ -13,11 +13,18 @@ const Approach = () => {
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         {/* add des prop */}
         <Card
-          title="Planning & Strategy"
+          title="Planning & Design"
           icon={<AceternityIcon order="Phase 1" />}
-          des="We'll collaborate to map out your website's goals, target audience, 
-          and key functionalities. We'll discuss things like site structure, 
-          navigation, and content requirements."
+          des="* Requirement Gathering:
+                - Stakeholder Meetings: Understand goals, user needs, and business objectives.
+                - User Stories: Outline clear features and functionality from the user’s perspective.
+                - Acceptance Criteria: Define criteria for each story to ensure development and testing clarity.
+
+              * UI/UX Design:
+                - Wireframes & Mockups: Create designs for key pages with high-fidelity mockups.
+                - User Journey Mapping: Ensure intuitive navigation and user flows.
+                - Prototyping: Use tools like Figma or Sketch to visualize functionality.
+                - Feedback Loops: Collect feedback from stakeholders and users to refine designs."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -26,11 +33,21 @@ const Approach = () => {
           />
         </Card>
         <Card
-          title="Development & Progress Update"
+          title="Development & Testing"
           icon={<AceternityIcon order="Phase 2" />}
-          des="Once we agree on the plan, I cue my lofi playlist and dive into
-          coding. From initial sketches to polished code, I keep you updated
-          every step of the way."
+          des="* Sprint Execution:
+                  - Daily Standups: Align the team and remove blockers.
+                  - Incremental Delivery: Deliver working software in every sprint.
+                  - Code Reviews: Ensure code quality through peer reviews.
+
+              * Testing:
+                  - Unit Testing: Validate individual modules or components.
+                  - Integration Testing: Ensure modules work together seamlessly.
+                  - User Acceptance Testing (UAT): Validate the software increment with stakeholders.
+                
+              *  Documentation:
+                  - Code & API Docs: Maintain clear and consistent documentation for future use.
+                  - Release Notes: Summarize new features and known issues after each sprint."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -48,11 +65,17 @@ const Approach = () => {
           {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
         </Card>
         <Card
-          title="Development & Launch"
+          title="Development & Post Launch"
           icon={<AceternityIcon order="Phase 3" />}
-          des="This is where the magic happens! Based on the approved design, 
-          I'll translate everything into functional code, building your website
-          from the ground up."
+          des="* Deployment:
+              - Pre-Deployment Testing: Ensure final UI/UX checks and performance optimization.
+              - Go-Live Plan: Prepare a release and rollback strategy.
+              - Monitoring & Maintenance: Use tools like Sentry to track system performance.
+
+            * Post-Launch:
+              - Final Documentation: Update user guides, technical architecture, and installation guides.
+              - Gather Feedback: Collect user feedback for future improvements.
+              - Backlog Refinement: Refine features and plan for future iterations based on performance and feedback."
         >
           <CanvasRevealEffect
             animationSpeed={3}

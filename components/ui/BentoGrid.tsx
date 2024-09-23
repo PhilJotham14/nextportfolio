@@ -1,4 +1,7 @@
-import { useState } from "react";
+// to prevent errors whe using Framer motion, drag component, have to tell Framer this is a client component
+"use client";
+
+import { useRef, useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 
 // Also install this npm i --save-dev @types/react-lottie
@@ -12,6 +15,47 @@ import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
 
+// Extra Cards/BentoGrid 
+import {Card} from "./Card";
+import JavascriptIcon from '@/public/assets/icons/square-js.svg';
+import CssIcon from '@/public/assets/icons/css3.svg'; 
+import ReactIcon from '@/public/assets/icons/react.svg'; 
+import GithubIcon from '@/public/assets/icons/github.svg';
+import NodeJsIcon from '@/public/assets/icons/node-js.svg';
+import MongoDbIcon from '@/public/assets/icons/mongodb.svg';
+import ExpressJsIcon from '@/public/assets/icons/express.svg';
+import MySqlIcon from '@/public/assets/icons/mysql.svg';
+import TailwindCssIcon from '@/public/assets/icons/tailwindcss.svg';
+import PythonIcon from '@/public/assets/icons/python.svg';
+import FigmaIcon from '@/public/assets/icons/figma.svg';
+import NextJsIcon from '@/public/assets/icons/nextjs.svg';
+import AndroidStudioIcon from '@/public/assets/icons/android_studio.svg';
+import PostgreSQLIcon from '@/public/assets/icons/postgresql.svg';
+import PostmanIcon from '@/public/assets/icons/postman.svg';
+import { CardHeaderBentoGrid } from "./CardHeaderBentoGrid";
+import { ToolboxItemsBentoGrid } from "./ToolboxItemsBentoGrid";
+import { motion } from 'framer-motion';
+
+// export const BentoGrid = ({
+//   className,
+//   children,
+// }: {
+//   className?: string;
+//   children?: React.ReactNode;
+// }) => {
+//   return (
+//     <div
+//       className={cn(
+//         // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
+//         "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
+//         className
+//       )}
+//     >
+//       {children}
+//     </div>
+//   );
+// };
+
 export const BentoGrid = ({
   className,
   children,
@@ -22,8 +66,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
+        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 px-6 lg:px-8 w-full mx-auto",
         className
       )}
     >
@@ -31,6 +74,7 @@ export const BentoGrid = ({
     </div>
   );
 };
+
 
 export const BentoGridItem = ({
   className,
@@ -52,8 +96,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["Next JS", "Express", "Node JS"];
+  const rightLists = ["MongoDB", "ReactJS", "Python"];
 
   const [copied, setCopied] = useState(false);
 
@@ -67,7 +111,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "p.jothamokiror@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -197,3 +241,255 @@ export const BentoGridItem = ({
     </div>
   );
 };
+
+// Get toolbox icons from Font Awesome https://fontawesome.com/icons/
+const toolboxItems = [
+  {
+    title: "MongoDB",
+    iconType: MongoDbIcon,
+  },
+  {
+    title: "Express JS",
+    iconType: ExpressJsIcon,
+  },
+  {
+    title: "React",
+    iconType: ReactIcon,
+  },
+  {
+    title: "Next JS",
+    iconType: NextJsIcon,
+  },
+  {
+    title: "Node JS",
+    iconType: NodeJsIcon,
+  },
+  {
+    title: "Javascript",
+    iconType: JavascriptIcon,
+  },
+  {
+    title: "MySQL",
+    iconType: MySqlIcon,
+  },
+  {
+    title: "Figma",
+    iconType: FigmaIcon,
+  },
+  {
+    title: "Python",
+    iconType: PythonIcon,
+  },
+  {
+    title: "Github",
+    iconType: GithubIcon,
+  },
+  {
+    title: "Tailwind CSS",
+    iconType: TailwindCssIcon,
+  },
+  {
+    title: "CSS3",
+    iconType: CssIcon,
+  },
+  {
+    title: "Android Studio",
+    iconType: AndroidStudioIcon,
+  },
+  {
+    title: "PostgreSQL",
+    iconType: PostgreSQLIcon,
+  },
+  {
+    title: "Postman",
+    iconType: PostmanIcon,
+  },
+];
+
+const hobbies = [
+  // {
+  //   title: 'Documentation',
+  //   emoji: '✍️', 
+  //   left: "5%",
+  //   top: "5%",
+  // },
+  // {
+  //   title: 'Technical Writing',
+  //   emoji: '📝', 
+  //   left: "50%",
+  //   top: "5%",
+  // },
+  // {
+  //   title: 'Open Source Contributions',
+  //   emoji: '💻', 
+  //   left: "35%",
+  //   top: "40%",
+  // },
+  // {
+  //   title: 'Learning New Tech',
+  //   emoji: '⚙️', 
+  //   left: "10%",
+  //   top: "35%",
+  // },
+  // {
+  //   title: 'Mentorship',
+  //   emoji: '👨‍🏫', 
+  //   left: "70%",
+  //   top: "45%",
+  // },
+  // {
+  //   title: 'Problem Solving',
+  //   emoji: '🧩', 
+  //   left: "5%",
+  //   top: "65%",
+  // },
+  // {
+  //   title: 'Reading',
+  //   emoji: '📚', 
+  //   left: "45%",
+  //   top: "75%",
+  // },
+  {
+    title: 'Reading',
+    emoji: '📚', 
+    left: "45%",
+    top: "75%",
+  },
+  {
+    title: 'Documentation',
+    emoji: '✍️', 
+    left: "50%",
+    top: "5%",
+  },
+  {
+    title: 'Open Source Contributions',
+    emoji: '💻', 
+    left: "35%",
+    top: "40%",
+  },
+  {
+    title: 'Technical Writing',
+    emoji: '📝', 
+    left: "5%",
+    top: "5%",
+  },
+  {
+    title: 'Learning New Tech',
+    emoji: '📖', 
+    left: "10%",
+    top: "35%",
+  },
+  {
+    title: 'Mentorship',
+    emoji: '👨‍🏫', 
+    left: "70%",
+    top: "45%",
+  },
+  {
+    title: 'Problem Solving',
+    emoji: '🧩', 
+    left: "5%",
+    top: "65%",
+  },
+]
+
+// Cards, svg resources
+export const AbtSection = () => {
+  const constraintRef = useRef(null);
+  return (
+    <div className="container px-4 lg:px-8">
+      <div className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-2">
+        {/* My Toolbox Card */}
+        <Card className="h-[320px] md:col-span-3 lg:col-span-1">
+          <CardHeaderBentoGrid
+            title="My Toolbox"
+            description="Explore the technologies and tools I use to craft exceptional digital experiences."
+            className=""
+          />
+          <ToolboxItemsBentoGrid 
+            items={toolboxItems} 
+            className="" 
+            itemsWrapperClassName="animate-move-left [animation-duration:30s]"/>
+          <ToolboxItemsBentoGrid
+            items={toolboxItems}
+            className="mt-6"
+            itemsWrapperClassName="animate-move-right [animation-duration:15s]"
+          />
+        </Card>
+
+        {/* Beyond the Code Card */}
+        <Card className="h-[320px] flex flex-col md:col-span-3 lg:col-span-1">
+          <CardHeaderBentoGrid
+            title="Beyond the Code"
+            description="Explore my Interests and hobbies beyond the digital realm."
+            className="px-6 py-6"
+          />
+          <div className="relative flex-1" ref=
+          {constraintRef}>
+            {hobbies.map((hobby) => (
+              <motion.div
+                key={hobby.title}
+                className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
+                style={{
+                  left: hobby.left,
+                  top: hobby.top,
+                }}
+                drag
+                dragConstraints={constraintRef}
+              >
+                <span className="font-medium text-gray-950">{hobby.title}</span>
+                <span>{hobby.emoji}</span>
+              </motion.div>
+            ))}
+          </div>
+        </Card>
+      </div>
+    </div>
+
+    // <div className="py-20 lg:py-28">
+    //   <div className="container">
+    //     <div className="mt-20 flex-col gap-8" >
+    //       {/* below div to work in different grid sizes */}
+    //       <div className="grid grid-cols-1 gap-8 md:grid md:grid-cols-5 lg:grid-cols-3"> 
+    //         <Card className="h-[320px] md:col-span-3 lg:col-span-2">
+    //           <CardHeaderBentoGrid
+    //             title="My Toolbox"
+    //             description="Explore the technologies and tools i use to craft exceptional digital experiences."
+    //             className=""
+    //             />
+    //             <ToolboxItemsBentoGrid items={toolboxItems} className="" />
+    //             <ToolboxItemsBentoGrid 
+    //               items={toolboxItems} 
+    //               className="mt-6" 
+    //               itemsWrapperClassName="-translate-x-1/2"
+    //             />
+    //         </Card>
+    //       </div>
+    //       <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
+    //         <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
+    //           <CardHeaderBentoGrid
+    //             title="Beyond the Code"
+    //             description="Explore my Interests and hobbies beyond the digital realm."
+    //             className="px-6 py-6"
+    //             />
+    //           <div className="relative flex-1">
+    //             {hobbies.map((hobby) => (
+    //               <div 
+    //                 key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute" 
+    //                 style={{
+    //                   left: hobby.left,
+    //                   top: hobby.top,
+    //                 }}
+    //               >
+    //                 <span className="font-medium text-gray-950">{hobby.title}</span>
+    //                 <span>{hobby.emoji}</span>
+    //               </div>
+    //             ))}
+    //           </div>
+    //         </Card> 
+    //       </div>      
+    //     </div>
+    //   </div>
+    // </div>
+  );
+}

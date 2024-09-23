@@ -91,3 +91,5 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+Reminder you used git remote add nextportfolio https://github.com/PhilJotham14/nextportfolio.git to link the repository

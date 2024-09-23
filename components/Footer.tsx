@@ -4,7 +4,7 @@ import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 
 // updated tk use Image instead of img as it causes heavy loads
-import Image from 'next/image'
+import Image from 'next/image';
 import Link from "next/link";
 
 const Footer = () => {

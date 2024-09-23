@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-      <img src="../portfolio/public/portfolio.png" alt="Portfolio Banner">
+      <img src="..portfolio/public/portfolio.png" alt="Portfolio Banner">
     </a>
   <br />
 
@@ -20,9 +20,6 @@
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
-5. 🕸️ [Code to Copy](#snippets)
-6. 🔗 [Assets](#links)
-7. 🚀 [More](#more)
 
 ## 🚨 Tutorial
 
@@ -72,7 +69,7 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/adrianhajdin/portfolio.git
+git clone https://github.com/PhilJotham14/nextportfolio.git 
 cd portfolio
 ```
 

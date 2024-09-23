@@ -6,6 +6,7 @@ import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 import Link from "next/link";
 import VideoModal from "./ui/VideoModal"; // Import the VideoModal component
+import Image from 'next/image';
 
 const RecentProjects = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -41,7 +42,14 @@ const RecentProjects = () => {
                     className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                     style={{ backgroundColor: "#13162D" }}
                   >
-                    <img src="/bg.png" alt="bgimg" />
+                    {/* <img src="/bg.png" alt="bgimg" /> */}
+                    <Image 
+                      src="/bg.png" 
+                      alt="bgimg" 
+                      layout="responsive" 
+                      width={500}  // Aspect ratio width
+                      height={300} // Aspect ratio height
+                    />
                   </div>
                   <img
                     src={item.img}

@@ -25,7 +25,7 @@ import NodeJsIcon from '@/public/assets/icons/node-js.svg';
 import MongoDbIcon from '@/public/assets/icons/mongodb.svg';
 import ExpressJsIcon from '@/public/assets/icons/express.svg';
 import MySqlIcon from '@/public/assets/icons/mysql.svg';
-import TailwindCssIcon from '@/public/assets/icons/tailwindcss.svg';
+import TailwindCssIcon from '@/public/assets/icons/tail.svg';
 import PythonIcon from '@/public/assets/icons/python.svg';
 import FigmaIcon from '@/public/assets/icons/figma.svg';
 import NextJsIcon from '@/public/assets/icons/nextjs.svg';
@@ -35,26 +35,6 @@ import PostmanIcon from '@/public/assets/icons/postman.svg';
 import { CardHeaderBentoGrid } from "./CardHeaderBentoGrid";
 import { ToolboxItemsBentoGrid } from "./ToolboxItemsBentoGrid";
 import { motion } from 'framer-motion';
-
-// export const BentoGrid = ({
-//   className,
-//   children,
-// }: {
-//   className?: string;
-//   children?: React.ReactNode;
-// }) => {
-//   return (
-//     <div
-//       className={cn(
-//         // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
-//         "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
-//         className
-//       )}
-//     >
-//       {children}
-//     </div>
-//   );
-// };
 
 export const BentoGrid = ({
   className,
@@ -307,48 +287,6 @@ const toolboxItems = [
 ];
 
 const hobbies = [
-  // {
-  //   title: 'Documentation',
-  //   emoji: '✍️', 
-  //   left: "5%",
-  //   top: "5%",
-  // },
-  // {
-  //   title: 'Technical Writing',
-  //   emoji: '📝', 
-  //   left: "50%",
-  //   top: "5%",
-  // },
-  // {
-  //   title: 'Open Source Contributions',
-  //   emoji: '💻', 
-  //   left: "35%",
-  //   top: "40%",
-  // },
-  // {
-  //   title: 'Learning New Tech',
-  //   emoji: '⚙️', 
-  //   left: "10%",
-  //   top: "35%",
-  // },
-  // {
-  //   title: 'Mentorship',
-  //   emoji: '👨‍🏫', 
-  //   left: "70%",
-  //   top: "45%",
-  // },
-  // {
-  //   title: 'Problem Solving',
-  //   emoji: '🧩', 
-  //   left: "5%",
-  //   top: "65%",
-  // },
-  // {
-  //   title: 'Reading',
-  //   emoji: '📚', 
-  //   left: "45%",
-  //   top: "75%",
-  // },
   {
     title: 'Reading',
     emoji: '📚', 
@@ -445,51 +383,5 @@ export const AbtSection = () => {
         </Card>
       </div>
     </div>
-
-    // <div className="py-20 lg:py-28">
-    //   <div className="container">
-    //     <div className="mt-20 flex-col gap-8" >
-    //       {/* below div to work in different grid sizes */}
-    //       <div className="grid grid-cols-1 gap-8 md:grid md:grid-cols-5 lg:grid-cols-3"> 
-    //         <Card className="h-[320px] md:col-span-3 lg:col-span-2">
-    //           <CardHeaderBentoGrid
-    //             title="My Toolbox"
-    //             description="Explore the technologies and tools i use to craft exceptional digital experiences."
-    //             className=""
-    //             />
-    //             <ToolboxItemsBentoGrid items={toolboxItems} className="" />
-    //             <ToolboxItemsBentoGrid 
-    //               items={toolboxItems} 
-    //               className="mt-6" 
-    //               itemsWrapperClassName="-translate-x-1/2"
-    //             />
-    //         </Card>
-    //       </div>
-    //       <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
-    //         <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
-    //           <CardHeaderBentoGrid
-    //             title="Beyond the Code"
-    //             description="Explore my Interests and hobbies beyond the digital realm."
-    //             className="px-6 py-6"
-    //             />
-    //           <div className="relative flex-1">
-    //             {hobbies.map((hobby) => (
-    //               <div 
-    //                 key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute" 
-    //                 style={{
-    //                   left: hobby.left,
-    //                   top: hobby.top,
-    //                 }}
-    //               >
-    //                 <span className="font-medium text-gray-950">{hobby.title}</span>
-    //                 <span>{hobby.emoji}</span>
-    //               </div>
-    //             ))}
-    //           </div>
-    //         </Card> 
-    //       </div>      
-    //     </div>
-    //   </div>
-    // </div>
   );
 }

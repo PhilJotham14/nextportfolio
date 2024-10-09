@@ -52,7 +52,7 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="FullStack Dev | Python Data Analyst | UI/UX | Dev-Ops"
+            words="FullStack Dev | Data Analyst | UI/UX | Dev-Ops"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
@@ -60,7 +60,7 @@ const Hero = () => {
             Hi! I&apos;m OKIROR PHILLIP JOTHAM, a FullStack | Software Developer based in Uganda.
           </p>
 
-          <a href="https://drive.google.com/file/d/1xJuUTsNQjsaX7z7aciu5ryqNwY7JMEs2/view?usp=drive_link" target="_blank">
+          <a href="https://drive.google.com/file/d/19bjdE5jBjIXEa1SKnjINxLhmct7Awv1t/view?usp=drive_link" target="_blank">
             <MagicButton
               title="Download CV"
               icon={<FaLocationArrow />}

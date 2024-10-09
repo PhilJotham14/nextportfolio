@@ -340,7 +340,7 @@ export const AbtSection = () => {
         {/* My Toolbox Card */}
         <Card className="h-[320px] md:col-span-3 lg:col-span-1">
           <CardHeaderBentoGrid
-            title="My Toolbox"
+            title="My Tech Stark"
             description="Explore the technologies and tools I use to craft exceptional digital experiences."
             className=""
           />
@@ -358,8 +358,8 @@ export const AbtSection = () => {
         {/* Beyond the Code Card */}
         <Card className="h-[320px] flex flex-col md:col-span-3 lg:col-span-1">
           <CardHeaderBentoGrid
-            title="Beyond the Code"
-            description="Explore my Interests and hobbies beyond the digital realm."
+            title="Elevation from Code"
+            description="Discover my passions and hobbies beyond the digital realm."
             className="px-6 py-6"
           />
           <div className="relative flex-1" ref=

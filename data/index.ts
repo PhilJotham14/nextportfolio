@@ -18,7 +18,7 @@ export const gridItems = [
   // },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
+    title: "I'm Globally Flexible for Time Zone Coordinations",
     description: "",
     className: "lg:col-span-3 md:col-span-3 md:row-span-2",
     imgClassName: "",

@@ -96,7 +96,8 @@ export const projects = [
     img: "/portfolio.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "/ui.aiimg.com",
-    videoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    // videoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    githubLink: "https://github.com/PhilJotham14/nextportfolio",  // Added GitHub link
   },
   // {
   //   id: 4,
@@ -105,7 +106,16 @@ export const projects = [
   //   img: "/p4.svg",
   //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
   //   link: "/ui.apple.com",
-  // },
+  // },s
+  {
+    id: 4,
+    title: "DATA SCIENCE[PYTHON]: PRACTICAL APPLICATIONS",
+    des: "Gained hands on experience in Python for data science by applying EDA, data manipulation with Pandas/NumPy and building predictive models to enhance problem-solving and analysis skills as a Full Stack Developer.",
+    img: "/courseraproject.png",
+    iconLists: ["/python.svg", "/jupyter.svg", "/pandas.svg", "/numpy.svg"],
+    link: "/ui.yoom.com",
+    githubLink: "https://github.com/PhilJotham14/Coursera-Introduction-to-Data-Science-in-Python",  // Added GitHub link
+  },
 ];
 
 export const testimonials = [

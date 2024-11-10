@@ -60,7 +60,7 @@ const Hero = () => {
             Hi! I&apos;m OKIROR PHILLIP JOTHAM, a FullStack | Software Developer based in Uganda.
           </p>
 
-          <a href="https://drive.google.com/file/d/19bjdE5jBjIXEa1SKnjINxLhmct7Awv1t/view?usp=drive_link" target="_blank">
+          <a href="https://drive.google.com/file/d/1ODL-vyAz17UzyBZu1xenaWqTAPplYM18/view?usp=drive_link" target="_blank">
             <MagicButton
               title="Download CV"
               icon={<FaLocationArrow />}
